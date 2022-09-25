@@ -17,6 +17,10 @@ class Stack{
 		}
 		System.out.println(nextIndex==0?"empty]":"\b\b]");
 	}
+	
+	public void pop(){
+		array[--nextIndex]=0;
+	}
 }
 class Demo{
 	public static void main(String args[]){
@@ -27,5 +31,11 @@ class Demo{
 		s1.push(40);
 		s1.push(50);
 		s1.printStack();//[50, 40, 30, 20, 10]
+		
+		s1.pop();
+		s1.printStack();//[40, 30, 20, 10]
+		
+		s1.pop();
+		s1.printStack();//[30, 20, 10]
 	}
 }

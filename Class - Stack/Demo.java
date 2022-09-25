@@ -9,6 +9,14 @@ class Stack{
 	public void push(int a){
 		array[nextIndex++]=a;
 	}
+	
+	public void printStack(){
+		System.out.print("[");
+		for(int i=nextIndex-1;i>=0;i--){
+			System.out.print(array[i]+", ");
+		}
+		System.out.println(nextIndex==0?"empty]":"\b\b]");
+	}
 }
 class Demo{
 	public static void main(String args[]){
@@ -17,5 +25,7 @@ class Demo{
 		s1.push(20);
 		s1.push(30);
 		s1.push(40);
+		s1.push(50);
+		s1.printStack();//[50, 40, 30, 20, 10]
 	}
 }

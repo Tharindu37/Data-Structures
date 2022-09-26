@@ -25,20 +25,25 @@ class Stack{
 	public int size(){
 		return nextIndex;
 	}
+	
+	public void clear(){
+		nextIndex=0;
+	}
 }
 class Demo{
 	public static void main(String args[]){
 		Stack s1=new Stack(10);
-		System.out.println("Size of the stack :"+s1.size());//0
 		s1.push(10);
 		s1.push(20);
 		s1.push(30);
 		s1.push(40);
 		s1.push(50);
 		s1.printStack();//[50, 40, 30, 20, 10]
+		System.out.println("Size of the stack :"+s1.size());//5
 		
-		s1.pop();
-		s1.printStack();//[40, 30, 20, 10]
-		System.out.println("Size of the stack :"+s1.size());//4
+		s1.clear();
+		s1.printStack();//[empty]
+		
+		System.out.println("Size of the stack :"+s1.size());//0
 	}
 }

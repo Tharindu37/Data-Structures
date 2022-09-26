@@ -6,8 +6,16 @@ class Stack{
 		array=new int[size];
 	}
 	
+	private boolean isEmpty(){
+		return nextIndex==0;
+	}
+	
+	private boolean isFull(){
+		return nextIndex>=array.length;
+	}
+	
 	public void push(int a){
-		if(nextIndex != array.length){
+		if(!isFull()){
 			array[nextIndex++]=a;
 		}else{
 			System.out.println("Stack is full...");
@@ -23,7 +31,7 @@ class Stack{
 	}
 	
 	public void pop(){
-		if(nextIndex != 0){
+		if(!isEmpty()){
 			array[--nextIndex]=0;
 		}else{
 			System.out.println("Stack is empty...");

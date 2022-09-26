@@ -21,10 +21,15 @@ class Stack{
 	public void pop(){
 		array[--nextIndex]=0;
 	}
+	
+	public int size(){
+		return nextIndex;
+	}
 }
 class Demo{
 	public static void main(String args[]){
 		Stack s1=new Stack(10);
+		System.out.println("Size of the stack :"+s1.size());//0
 		s1.push(10);
 		s1.push(20);
 		s1.push(30);
@@ -34,8 +39,6 @@ class Demo{
 		
 		s1.pop();
 		s1.printStack();//[40, 30, 20, 10]
-		
-		s1.pop();
-		s1.printStack();//[30, 20, 10]
+		System.out.println("Size of the stack :"+s1.size());//4
 	}
 }

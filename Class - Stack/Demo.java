@@ -53,6 +53,14 @@ class Stack{
 	public int poll(){
 		return isEmpty()? -1 : array[--nextIndex];
 	}
+	
+	public int[] toArray(){
+		int[] temp = new int[nextIndex];
+		for(int i=0;i<nextIndex;i++){
+			temp[i]=array[i];
+		}
+		return temp;
+	}
 }
 class Demo{
 	public static void main(String args[]){
@@ -65,14 +73,10 @@ class Demo{
 		s1.push(60);
 		s1.printStack(); //[60, 50, 40, 30, 20, 10]
 		
-		int topElement=s1.peek();//return the top element (last inserted) of the stack
-		System.out.println("Top element : "+topElement);//60
-		System.out.println("After calling peek()...");
-		s1.printStack(); //[60, 50, 40, 30, 20, 10]
+		int[] ar = s1.toArray();
+		for(int a: ar){
+			System.out.print(a+" ");
+		}
 		
-		topElement=s1.poll(); //returns and remove the top element of the stack
-		System.out.println("Top element : "+topElement); //60
-		System.out.println("After calling poll()....");
-		s1.printStack(); //[50, 40, 30, 20, 10]
 	}
 }

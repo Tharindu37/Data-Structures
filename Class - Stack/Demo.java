@@ -7,7 +7,11 @@ class Stack{
 	}
 	
 	public void push(int a){
-		array[nextIndex++]=a;
+		if(nextIndex != array.length){
+			array[nextIndex++]=a;
+		}else{
+			System.out.println("Stack is full...");
+		}
 	}
 	
 	public void printStack(){
@@ -19,7 +23,11 @@ class Stack{
 	}
 	
 	public void pop(){
-		array[--nextIndex]=0;
+		if(nextIndex != 0){
+			array[--nextIndex]=0;
+		}else{
+			System.out.println("Stack is empty...");
+		}
 	}
 	
 	public int size(){
@@ -38,12 +46,17 @@ class Demo{
 		s1.push(30);
 		s1.push(40);
 		s1.push(50);
-		s1.printStack();//[50, 40, 30, 20, 10]
-		System.out.println("Size of the stack :"+s1.size());//5
+		s1.push(60);
+		s1.push(70);
+		s1.push(80);
+		s1.push(90);
+		s1.push(100);
+		s1.printStack(); //[100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
+		System.out.println("Size of the stack :"+s1.size());//10
+		s1.push(111); //Prints "Stack is full....."
 		
 		s1.clear();
 		s1.printStack();//[empty]
-		
-		System.out.println("Size of the stack :"+s1.size());//0
+		s1.pop(); //Prints "Stack is empty..."
 	}
 }

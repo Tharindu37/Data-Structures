@@ -45,6 +45,14 @@ class Stack{
 	public void clear(){
 		nextIndex=0;
 	}
+	
+	public int peek(){
+		return isEmpty()? -1 : array[nextIndex-1];
+	}
+	
+	public int poll(){
+		return isEmpty()? -1 : array[--nextIndex];
+	}
 }
 class Demo{
 	public static void main(String args[]){
@@ -55,16 +63,16 @@ class Demo{
 		s1.push(40);
 		s1.push(50);
 		s1.push(60);
-		s1.push(70);
-		s1.push(80);
-		s1.push(90);
-		s1.push(100);
-		s1.printStack(); //[100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
-		System.out.println("Size of the stack :"+s1.size());//10
-		s1.push(111); //Prints "Stack is full....."
+		s1.printStack(); //[60, 50, 40, 30, 20, 10]
 		
-		s1.clear();
-		s1.printStack();//[empty]
-		s1.pop(); //Prints "Stack is empty..."
+		int topElement=s1.peek();//return the top element (last inserted) of the stack
+		System.out.println("Top element : "+topElement);//60
+		System.out.println("After calling peek()...");
+		s1.printStack(); //[60, 50, 40, 30, 20, 10]
+		
+		topElement=s1.poll(); //returns and remove the top element of the stack
+		System.out.println("Top element : "+topElement); //60
+		System.out.println("After calling poll()....");
+		s1.printStack(); //[50, 40, 30, 20, 10]
 	}
 }

@@ -1,4 +1,6 @@
 class Queue{
+	private int[] array;
+	private int nextIndex;
 	
 }
 

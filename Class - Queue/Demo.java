@@ -22,6 +22,13 @@ class Queue{
 		}
 		System.out.println(isEmpty()?"empty]":"\b\b]");
 	}
+	
+	public void deQueue(){
+		for(int i=0;i<nextIndex-1;i++){
+			array[i]=array[i+1];
+		}
+		nextIndex--;
+	}
 }
 
 class Demo{
@@ -33,5 +40,10 @@ class Demo{
 		q1.enQueue(40);
 		q1.enQueue(50);
 		q1.printQueue(); //[10, 20, 30, 40, 50]
+		
+		q1.deQueue();
+		q1.printQueue(); //[20, 30, 40, 50, 60]
+		q1.deQueue();
+		q1.printQueue(); //[30, 40, 50, 60]
 	}
 }

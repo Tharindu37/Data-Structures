@@ -1,4 +1,6 @@
 class Queue{
+	private Node front;
+	
 	//-----"Node" inner class-------
 	class Node{
 		private int data;

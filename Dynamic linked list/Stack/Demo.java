@@ -1,3 +1,6 @@
+class Stack{
+	private Node top;
+}
 class Node{
 	int data;
 	Node next;
@@ -8,6 +11,6 @@ class Node{
 }
 class Demo{
 	public static void main(String args[]){
-		Node n1=new Node(10);
+		Stack s1=new Stack();
 	}
 }

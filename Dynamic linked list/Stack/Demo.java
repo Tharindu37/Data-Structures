@@ -31,6 +31,14 @@ class Stack{
 		return count;
 	}
 	
+	public void pop(){
+		if(!isEmpty()){
+			top=top.next;
+		}else{
+			System.out.println("Stack is empty!");
+		}
+	}
+	
 	//------"Node" Inner class--------
 	class Node{
 		private int data;
@@ -45,15 +53,16 @@ class Stack{
 class Demo{
 	public static void main(String args[]){
 		Stack s1=new Stack();
-		System.out.println("Size of the stack : "+s1.size()); //0
-		System.out.println("Stack is empty..: "+s1.isEmpty()); //true
+		s1.printStack(); //[empty]
 		s1.push(10);
 		s1.push(20);
 		s1.push(30);
 		s1.push(40);
 		s1.push(50);
 		s1.printStack(); //[50, 40, 30, 20, 10]
-		System.out.println("Size of the stack : "+s1.size()); //5
-		System.out.println("Stack is empty..: "+s1.isEmpty()); //false
+		s1.pop();
+		s1.printStack(); //[40, 30, 20, 10]
+		s1.pop();
+		s1.printStack(); //[30, 20, 10]
 	}
 }

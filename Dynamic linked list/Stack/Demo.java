@@ -1,3 +1,4 @@
+import java.util.*;
 class Stack{
 	private Node top;
 	
@@ -39,6 +40,21 @@ class Stack{
 		}
 	}
 	
+	public int[] toArray(){
+		int[] ar=new int[size()]; 
+		int count=0;
+		Node temp = top;
+		while(temp!=null){
+			ar[count++]=temp.data;
+			temp=temp.next;
+		}
+		return ar;
+	}
+	
+	public void clear(){
+		top=null;
+	}
+	
 	//------"Node" Inner class--------
 	class Node{
 		private int data;
@@ -60,9 +76,9 @@ class Demo{
 		s1.push(40);
 		s1.push(50);
 		s1.printStack(); //[50, 40, 30, 20, 10]
-		s1.pop();
-		s1.printStack(); //[40, 30, 20, 10]
-		s1.pop();
-		s1.printStack(); //[30, 20, 10]
+		int[] ar=s1.toArray();
+		System.out.println(Arrays.toString(ar));
+		s1.clear();
+		s1.printStack(); //[empty]
 	}
 }

@@ -16,15 +16,18 @@ class Stack{
 		}
 		System.out.println(top==null?"empty]":"\b\b]");
 	}
-}
-class Node{
-	int data;
-	Node next;
 	
-	Node(int data){
-		this.data=data;
+	//------"Node" Inner class--------
+	class Node{
+		private int data;
+		private Node next;
+		
+		private Node(int data){
+			this.data=data;
+		}
 	}
 }
+
 class Demo{
 	public static void main(String args[]){
 		Stack s1=new Stack();

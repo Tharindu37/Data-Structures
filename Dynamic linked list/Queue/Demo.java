@@ -15,6 +15,15 @@ class Queue{
 		}
 	}
 	
+	public void printQueue(){
+		Node temp=front;
+		System.out.print("[");
+		while(temp!=null){
+			System.out.print(temp.data+", ");
+			temp=temp.next;
+		}
+		System.out.println(front==null?"empty]":"\b\b]");
+	}
 	//-----"Node" inner class-------
 	class Node{
 		private int data;
@@ -31,5 +40,7 @@ class Demo{
 		q1.enQueue(20);
 		q1.enQueue(30);
 		q1.enQueue(40);
+		q1.enQueue(50);
+		q1.printQueue(); //[10, 20, 30, 40, 50]
 	}
 }

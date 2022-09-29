@@ -1,6 +1,9 @@
 class Queue{
 	private Node front;
 	
+	public boolean isEmpty(){
+		return front==null;
+	}
 	
 	public void enQueue(int data){
 		Node n1=new Node(data);
@@ -24,6 +27,15 @@ class Queue{
 		}
 		System.out.println(front==null?"empty]":"\b\b]");
 	}
+	
+	public void deQueue(){
+		if(!isEmpty()){
+			front=front.next;
+		}else{
+			System.out.println("Queue is empty!");
+		}
+	}
+	
 	//-----"Node" inner class-------
 	class Node{
 		private int data;
@@ -42,5 +54,8 @@ class Demo{
 		q1.enQueue(40);
 		q1.enQueue(50);
 		q1.printQueue(); //[10, 20, 30, 40, 50]
+		
+		q1.deQueue();
+		q1.printQueue(); //[20, 30, 40, 50]
 	}
 }
